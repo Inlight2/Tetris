@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scrips\BlockManager.cs" />
+     <Compile Include="Assets\Scrips\Controls.cs" />
+     <Compile Include="Assets\Scrips\Grid.cs" />
      <Compile Include="Assets\Scrips\WorldPosition.cs" />
      <Compile Include="Assets\Scrips\WorldPositionInspector.cs" />
  <Reference Include="UnityEngine.UI">
