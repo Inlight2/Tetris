@@ -31,6 +31,8 @@ public class Grid : MonoBehaviour {
         {
             grid[(int)block.position.x, (int)block.position.y] = block.gameObject;
         }
+
+        //TODO:add a test for removing lines
     }
 
     public bool ValidateNextPosition(int deltaX, int deltaY, GameObject curPiece)

@@ -94,4 +94,45 @@ public class BlockManager : MonoBehaviour {
             curPiece = null;
         }
     }
+
+    public void Left()
+    {
+        if(grid.ValidateNextPosition(-1, 0, curPiece))
+        {
+            //when we move the tetrimino left or right reset the down timer to surf across a surface
+            curTick = 0;
+            curPiece.transform.position = new Vector3(curPiece.transform.position.x - 1,
+                                                      curPiece.transform.position.y,
+                                                      curPiece.transform.position.z);
+        }
+    }
+
+    public void Right()
+    {
+        if (grid.ValidateNextPosition(1, 0, curPiece))
+        {
+            //when we move the tetrimino left or right reset the down timer to surf across a surface
+            curTick = 0;
+            curPiece.transform.position = new Vector3(curPiece.transform.position.x + 1,
+                                                      curPiece.transform.position.y,
+                                                      curPiece.transform.position.z);
+        }
+    }
+
+    public void Turn()
+    {
+        curPiece.transform.Rotate(0f, 0f, -90f);
+        Grid.RoundTetriminoPos(curPiece);
+
+        if (!grid.ValidateNextPosition(0, 0, curPiece))
+        {
+            curPiece.transform.Rotate(0f, 0f, 90f);
+            Grid.RoundTetriminoPos(curPiece);
+        }
+    }
+
+    public void Down()
+    {
+        MoveDown();
+    }
 }

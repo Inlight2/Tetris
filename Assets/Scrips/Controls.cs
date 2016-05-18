@@ -12,21 +12,21 @@ public class Controls : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetButtonDown("A"))
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            //TODO:Left
+            manager.Left();
         }
-        else if(Input.GetButtonDown("D"))
+        else if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
-           //TODO:Right
+            manager.Right();
         }
-        else if(Input.GetButtonDown("W"))
+        else if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            //TODO:Spin
+            manager.Turn();
         }
-        else if(Input.GetButtonDown("S"))
+        else if(Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
-            //TODO:Down
+            manager.Down();
         }
     }
 	
